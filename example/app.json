@@ -1,0 +1,22 @@
+{
+  "name": "segmented-control-rn-example",
+  "displayName": "SegmentedControlRn Example",
+  "expo": {
+    "name": "segmented-control-rn-example",
+    "slug": "segmented-control-rn-example",
+    "description": "Example app for segmented-control-rn",
+    "privacy": "public",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
