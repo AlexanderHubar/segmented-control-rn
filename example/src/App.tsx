@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { StyleSheet, Text, View, Image } from 'react-native';
-import SegmentedControl from 'segmented-control-rn';
+import { SegmentedControl } from 'segmented-control-rn';
 
 const INACTIVE_COLOR = 'rgba(0, 0, 0, 0.5)';
 const ACTIVE_COLOR = 'rgb(0, 0, 0)';

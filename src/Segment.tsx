@@ -1,7 +1,9 @@
 import React from 'react';
 import { TouchableOpacity, View } from 'react-native';
-import styles from '../../src/styles';
-import type { SegmentProps } from '../../src/types';
+
+import styles from './styles';
+
+import type { SegmentProps } from './types';
 
 function Segment({
   index,
@@ -33,4 +35,4 @@ function Segment({
   );
 }
 
-export default Segment;
+export { Segment };

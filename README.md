@@ -2,6 +2,8 @@
 
 React Native Segmented control
 
+![example.png](example.png)
+
 ## Installation
 
 ```sh
@@ -20,7 +22,7 @@ const ACTIVE_COLOR = 'rgb(0, 0, 0)';
 
 const segments = [
   {
-    active: <Text style={{ color: INACTIVE_COLOR }}>First</Text>,
+    active: <Text style={{ color: ACTIVE_COLOR }}>First</Text>,
     inactive: <Text style={{ color: INACTIVE_COLOR }}>First</Text>,
   },
   {
