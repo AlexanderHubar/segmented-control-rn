@@ -1,18 +1,36 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import SegmentedControlRn from 'segmented-control-rn';
+import { StyleSheet, Text, View } from 'react-native';
+import SegmentedControl from 'segmented-control-rn';
+import { useState } from 'react';
+
+const INACTIVE_COLOR = 'rgba(0, 0, 0, 0.5)';
+
+const segments = [
+  {
+    active: <Text style={{ color: INACTIVE_COLOR }}>First</Text>,
+    inactive: <Text style={{ color: INACTIVE_COLOR }}>First</Text>,
+  },
+  {
+    active: <Text>Second</Text>,
+    inactive: <Text style={{ color: INACTIVE_COLOR }}>Second</Text>,
+  },
+  {
+    active: <Text>Third</Text>,
+    inactive: <Text style={{ color: INACTIVE_COLOR }}>Third</Text>,
+  },
+];
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    SegmentedControlRn.multiply(3, 7).then(setResult);
-  }, []);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <SegmentedControl
+        onChange={(index) => setActiveIndex(index)}
+        segments={segments}
+        selectedIndex={activeIndex}
+      />
     </View>
   );
 }
