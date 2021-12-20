@@ -1,16 +1,17 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Animated, Easing, LayoutChangeEvent, View } from 'react-native';
 
-import type { NativeEvent, SegmentedControlProps } from './types';
+import { Segment } from './Segment';
+
 import styles from './styles';
 
-import { Segment } from './Segment';
+import type { NativeEvent, SegmentedControlProps } from './types';
 
 function SegmentedControl({
   segments,
   backgroundColor = '#E6EAF2',
   tintColor = '#FFFFFF',
-  selectedIndex = 2,
+  selectedIndex = 0,
   style,
   segmentStyle,
   activeSegmentStyle,
@@ -25,7 +26,7 @@ function SegmentedControl({
     (index: number): void => {
       const event: NativeEvent = {
         nativeEvent: {
-          value: segments[index].active,
+          value: segments[index].value,
           selectedSegmentIndex: index,
         },
       };
@@ -41,7 +42,7 @@ function SegmentedControl({
     const segmentItemWidth = layoutWidth / segments.length;
 
     if (segmentItemWidth !== segmentWidth) {
-      setSegmentWidth(segmentItemWidth);
+      setSegmentWidth(segmentItemWidth - 1.3);
     }
   };
 
@@ -78,8 +79,9 @@ function SegmentedControl({
         { backgroundColor },
         style,
       ]}
+      onLayout={onSegmentLayout}
     >
-      <View style={styles.segmentControlInner} onLayout={onSegmentLayout}>
+      <View style={styles.segmentControlInner}>
         {Boolean(segmentWidth) && (
           <Animated.View
             style={[

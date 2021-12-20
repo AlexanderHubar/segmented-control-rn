@@ -7,11 +7,11 @@ export default StyleSheet.create({
     height: '100%',
   },
   segmentControlWrapper: {
+    width: '100%',
     minHeight: 28,
     borderRadius: 8,
     flexDirection: 'row',
     alignItems: 'center',
-    maxWidth: 350,
   },
   center: {
     flexGrow: 1,

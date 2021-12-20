@@ -17,14 +17,17 @@ const segments = [
       />
     ),
     inactive: <Text style={{ color: INACTIVE_COLOR }}>First</Text>,
+    value: 1,
   },
   {
     active: <Text style={{ color: ACTIVE_COLOR }}>Second</Text>,
     inactive: <Text style={{ color: INACTIVE_COLOR }}>Second</Text>,
+    value: 2,
   },
   {
     active: <Text style={{ color: ACTIVE_COLOR }}>Third</Text>,
     inactive: <Text style={{ color: INACTIVE_COLOR }}>Third</Text>,
+    value: 3,
   },
 ];
 
@@ -34,6 +37,9 @@ export default function App() {
   return (
     <View style={styles.container}>
       <SegmentedControl
+        onValueChange={(segment) => {
+          console.log(segment?.value);
+        }}
         onChange={(index) => setActiveIndex(index)}
         segments={segments}
         selectedIndex={activeIndex}
@@ -44,13 +50,9 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
+    padding: 16,
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
   },
 });

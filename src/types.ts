@@ -2,7 +2,7 @@ import type { ViewStyle } from 'react-native';
 
 export interface NativeEvent {
   nativeEvent: {
-    value: JSX.Element;
+    value: any;
     selectedSegmentIndex: number;
   };
 }
@@ -10,6 +10,7 @@ export interface NativeEvent {
 export interface Segment {
   active: JSX.Element;
   inactive: JSX.Element;
+  value: any;
   disabled?: boolean;
 }
 
