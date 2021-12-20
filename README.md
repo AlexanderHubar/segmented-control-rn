@@ -48,6 +48,40 @@ return (
 );
 ```
 
+## Props
+
+### `backgroundColor`
+
+Background color of the Segmented Control.
+
+| Type   | Required | Default value |
+| ------ | -------- | ------------- |
+| string | No       | #E6EAF2       |
+
+### `tintColor`
+
+Primary color of the active segment
+
+| Type   | Required | Default value |
+| ------ | -------- | ------------- |
+| string | No       | #FFFFFF       |
+
+### `selectedIndex`
+
+Index of the selected segment.
+
+| Type   | Required | Default value |
+| ------ | -------- | ------------- |
+| number | Yes      | 0             |
+
+### `disabled`
+
+If it `true` then makes segments disabled and sets `opacity` to `0.4`.
+
+| Type   | Required | Default value |
+| ------ | -------- | ------------- |
+| number | No       | false             |
+
 ## Contributing
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
