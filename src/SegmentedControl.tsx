@@ -60,16 +60,10 @@ function SegmentedControl({
   );
 
   useEffect(() => {
-    if (animation && segmentWidth) {
+    if (animation) {
       handleSegmentPress(selectedIndex);
     }
-  }, [
-    animation,
-    handleSegmentPress,
-    segmentWidth,
-    selectedIndex,
-    handleChange,
-  ]);
+  }, [animation, handleSegmentPress, selectedIndex, handleChange]);
 
   return (
     <View

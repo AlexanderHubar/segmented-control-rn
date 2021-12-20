@@ -38,7 +38,7 @@ export default function App() {
     <View style={styles.container}>
       <SegmentedControl
         onValueChange={(segment) => {
-          console.log(segment?.value);
+          console.log(segment.nativeEvent.value);
         }}
         onChange={(index) => setActiveIndex(index)}
         segments={segments}
